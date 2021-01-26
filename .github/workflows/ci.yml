@@ -42,16 +42,3 @@ jobs:
           asset_path: ./extension.ocmod.zip
           asset_name: extension.ocmod.zip
           asset_content_type: application/zip
-
-  dispatch_newsletter:
-    name: Dispatch Newsletter
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Send emails
-        uses: ./.github/actions/dispatch-newsletter
-        with:
-          TOKEN: ${{ secrets.AUTHENTICATION }}
-          URL: ${{ secrets.URL_NEWSLETTER }}
